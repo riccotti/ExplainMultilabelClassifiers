@@ -75,9 +75,9 @@ def sorted_distances_df(X2E, i2e, discrete_var, continuous_var, classes_name,lab
     :param class_name: array of str, name(s) of the column(s) containing the label
     :return: pandas dataframe
     """
-
+    indexes_values = X2E.index.values
     # distance between instance to explain and other instances
-    distances = [mixed_distance(i2e,X2E.loc[i],discrete=discrete_var,continuous=continuous_var,classes_name=classes_name,ddist=simple_match_distance,cdist=normalized_euclidean_distance) for i in range(0,len(X2E))]
+    distances = [mixed_distance(i2e,X2E.loc[i],discrete=discrete_var,continuous=continuous_var,classes_name=classes_name,ddist=simple_match_distance,cdist=normalized_euclidean_distance) for i in indexes_values]
     output = X2E.reset_index().rename(columns={'index':'old_index_'+label_distance})#.drop('index',1)
     output[label_distance] = pd.Series(distances)
     output = output.sort_values(by=label_distance,ascending=True).reset_index().drop('index',1)
