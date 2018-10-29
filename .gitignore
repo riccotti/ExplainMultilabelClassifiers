@@ -1,0 +1,11 @@
+# Compiled Python files
+*.pyc
+
+#ignore raw data folder
+dataset/dataset_raw/
+
+#ignore ipynb_checkpoints
+.ipynb_checkpoints
+.ipynb_checkpoints/
+
+
