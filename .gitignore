@@ -5,10 +5,10 @@
 dataset/dataset_raw/
 
 #ignore data files too big to be pushed on git
-dataset/diabete_2e.csv
-dataset/diabete_bb.csv
-dataset/woman_2e.csv
-dataset/woman_bb.csv
+diabete_2e.csv
+diabete_bb.csv
+woman_2e.csv
+woman_bb.csv
 
 #ignore ipynb_checkpoints
 .ipynb_checkpoints
