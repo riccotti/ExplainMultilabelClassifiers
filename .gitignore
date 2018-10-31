@@ -3,6 +3,8 @@
 
 #ignore raw data folder
 dataset/dataset_raw/
+#ignore the log folder
+log
 
 #ignore data files too big to be pushed on git
 diabete_2e.csv
