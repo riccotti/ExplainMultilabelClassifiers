@@ -6,7 +6,7 @@ dataset/dataset_raw/
 #ignore the log folder
 log/
 #ignore old version of notebooks
-juyter/old/
+jupyter/old/
 
 #ignore data files too big to be pushed on git
 diabete_2e.csv
