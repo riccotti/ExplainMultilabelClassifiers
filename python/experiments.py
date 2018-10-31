@@ -70,20 +70,17 @@ BB_predictions_df = pd.DataFrame(y_bb,columns=cols_Y_BB)
 Xtest_features_df = pd.DataFrame(X2e,columns=cols_X)
 X2E = pd.concat([Xtest_features_df,BB_predictions_df],axis=1)
 X2E_len = len(X2E)
-instance_counter=0
 
 logger.info('Going into the loop over all instances to explain')
 
 for instance in X2E.index.values:
-    instance_counter+=1
-    logger.info('explainig instance %d, %d out of %d' % (instance,instance_counter, X2E_len))
     
     #instance to be explained
     i2e = X2E.loc[instance] 
     i2e_values = i2e[cols_X].values
     y_i2e_bb = bb.predict(i2e_values.reshape(1, -1))
 
-    logger.info('computing pairwise distances using distance_functions.sorted_distances_df')
+    #logger.info('computing pairwise distances using distance_functions.sorted_distances_df')
     X2E_wdistances = distance_functions.sorted_distances_df(
         X2E,i2e,discrete_var=X2E[columns_type_dataset[dataset][1]].columns.values,
         continuous_var=X2E[columns_type_dataset[dataset][0]].columns.values,
@@ -130,7 +127,7 @@ for instance in X2E.index.values:
     #####################################################################################################
     ###############################MIXED NEIGHBORHOOD####################################################
 
-    logger.info('generating MIXED synthetic neighborhood')
+    #logger.info('generating MIXED synthetic neighborhood')
     alpha_beta_sample_knn = synthetic_neighborhood.sample_alphaFeat_betaLabel(
         sampleKnn_feat_space.drop('feat_space_dist',1),
         sampleKnn_label_space.drop('label_space_dist',1),
@@ -146,7 +143,7 @@ for instance in X2E.index.values:
     
     #####################################################################################################
     #growing tree on synthetic neighborhood
-    logger.info('growing DT on MIXED synthetic neighborhood')
+    #logger.info('growing DT on MIXED synthetic neighborhood')
     tree1 = DecisionTreeClassifier()
     tree1.fit(synthetic_neighborhood1.drop(cols_Y_BB,1).values,synthetic_neighborhood1[cols_Y_BB].values)
     ## evuluating on synthetic neighborhood
@@ -168,7 +165,7 @@ for instance in X2E.index.values:
     #################################UNIFIED NEIGHBORHOOD################################################
 
     
-    logger.info('generating UNIFIED synthetic neighborhood')
+    #logger.info('generating UNIFIED synthetic neighborhood')
     synthetic_neighborhood2 = synthetic_neighborhood.random_synthetic_neighborhood_df(
         sampleKnn_mixed_space,size,discrete_var=X2E[columns_type_dataset[dataset][1]].columns.values,
         continuous_var=X2E[columns_type_dataset[dataset][0]].columns.values, classes_name=cols_Y_BB)
@@ -177,7 +174,7 @@ for instance in X2E.index.values:
     synthetic_neighborhood2 = pd.concat([synthetic_neighborhood2,BB_label_syn2_df],1)
     #####################################################################################################
     #growing tree on synthetic neighborhood        
-    logger.info('growing DT on UNIFIED synthetic neighborhood')
+    #logger.info('growing DT on UNIFIED synthetic neighborhood')
     tree2 = DecisionTreeClassifier()
     tree2.fit(synthetic_neighborhood2.drop(cols_Y_BB,1).values,synthetic_neighborhood2[cols_Y_BB].values)
     #print('____EVALUATION TREE2___bb: %s' % blackbox_name)
@@ -229,5 +226,5 @@ for instance in X2E.index.values:
     except Exception:
         logger.exception('Problems in saving the output')
         break 
-    logging.info(' ')
+
 logging.info('end')
