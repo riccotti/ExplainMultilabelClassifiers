@@ -15,11 +15,15 @@ from multilabelexplanations import synthetic_neighborhood
 import json
 import logging
 
+
+dataset = sys.argv[1]
+blackbox_name = sys.argv[2]
+
 if not os.path.exists('../log'):
     os.makedirs('../log')
 
 logFormat = '%(asctime)s - pid %(process)d - %(levelname)s -: %(message)s'
-logFile = '../log/experiments.log'
+logFile = '../log/'+str(dataset)+'_'+str(blackbox_name)+'_experiments.log'
 logger = logging.getLogger('checking_experiments_progress')
 logger.setLevel(logging.INFO)
 fh = logging.FileHandler(logFile, "a")
@@ -28,9 +32,6 @@ fh.setFormatter(formatter)
 logger.addHandler(fh)
 logger.info('Starting the script')
 
-
-dataset = sys.argv[1]
-blackbox_name = sys.argv[2]
 
 #dict with key: dataset_name and value target columns names
 columns_ylist = {'woman': 'service', 'yeast': 'Class'}
