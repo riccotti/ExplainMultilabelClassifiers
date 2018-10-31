@@ -30,7 +30,7 @@ def istance_rule_extractor(i2e_values, DT, features_names):
     leave_id = DT.apply(i2e_values)
     #leave_id è una vettore al cui posto i-esimo si trova l'id del nodo-foglia in cui cade l'esempio i-esimo 
     #in questo caso l'esempio è solo uno, quindi è un'array lunga 1
-    print('id leaf node: '+ str(leave_id[0]))
+    #print('id leaf node: '+ str(leave_id[0]))
 
     #qui trovo in nodi usati
     node_index = node_indicator.indices
@@ -44,7 +44,7 @@ def istance_rule_extractor(i2e_values, DT, features_names):
     for node_id in node_index:
         #controllo che non siamo già in una foglia
         if leave_id[sample_id] == node_id:  
-            print("leaf node {} reached, no decision here".format(leave_id[sample_id]))
+            #\print("leaf node {} reached, no decision here".format(leave_id[sample_id]))
             break
         else:
             #se il valore di quella feature in quella istanza è minore della treshold 
