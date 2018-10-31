@@ -102,7 +102,7 @@ for instance in X2E.index.values:
     #number of synthetic neighbors to generate
     size= 1000 
 
-    logger.info('sampling %d real neighbors for synthetic neighborhood generation' % k)
+    #logger.info('sampling %d real neighbors for synthetic neighborhood generation' % k)
     #sample kNN for synthetic neighborhood based on feature space distances
     filters_features_space = filter_old_indexes.copy()
     filters_features_space.append('label_space_dist') 
