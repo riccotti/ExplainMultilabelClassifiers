@@ -18,6 +18,7 @@ import logging
 
 dataset = sys.argv[1]
 blackbox_name = sys.argv[2]
+now = datetime.datetime.now().strftime("%Y%m%d_%H%M")
 
 if not os.path.exists('../log'):
     os.makedirs('../log')
@@ -217,7 +218,6 @@ for instance in X2E.index.values:
         'lenght_rule_tree2':len_rule2,
     }
     
-    now = datetime.datetime.now().strftime("%Y%m%d_%H%M")
     try:
         json_str = ('%s\n' % json.dumps(jrow)).encode('utf-8')
     except Exception:
