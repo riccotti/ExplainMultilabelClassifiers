@@ -23,7 +23,7 @@ woman_bb.csv
 .ipynb_checkpoints/
 
 #ignore output
-output/
+output/old_output/
 
 
 
