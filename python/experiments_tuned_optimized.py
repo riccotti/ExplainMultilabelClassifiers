@@ -39,7 +39,7 @@ logger.info('Starting the script')
 
 
 #dict with key: dataset_name and value target columns names
-columns_ylist = {'woman': 'service', 'yeast': 'Class'}
+columns_ylist = {'woman': 'service', 'yeast': 'Class', 'diabete':'diag_'}
 
 #dict with key: dataset_name and value list of lists, list[0] = countinuous var names, list[1] = discrete var names
 with open('../dataset/dict_names.pickle', 'rb') as handle:
