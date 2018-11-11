@@ -14,9 +14,8 @@ global_dt/old
 models/old
 
 #ignore data files too big to be pushed on git
-dataset/diabete*
-woman_2e.csv
-woman_bb.csv
+dataset/
+
 
 #ignore ipynb_checkpoints
 .ipynb_checkpoints
