@@ -1,33 +1,27 @@
 # Compiled Python files
 *.pyc
 
-#ignore raw data folder
-dataset/dataset_raw/
-dataset/woman*.csv
-dataset/yeast*.csv
-
 #ignore the log folder
 log/
-#ignore old version of notebooks and models
+#ignore old version of notebooks, models and datasets
 jupyter/old/
 global_dt/old
 models/old
+dataset/old/
+dataset/dataset_raw/old/
+output/old_output/
 
 #ignore data files too big to be pushed on git
 dataset/yeast*
 dataset/woman*
 dataset/medical*
-dataset/old/
-dataset/dataset_raw/old/
-
-
 
 #ignore ipynb_checkpoints
 .ipynb_checkpoints
 .ipynb_checkpoints/
 
-#ignore output
-output/old_output/
+
+
 
 
 
