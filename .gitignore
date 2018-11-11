@@ -11,11 +11,10 @@ log/
 #ignore old version of notebooks and models
 jupyter/old/
 global_dt/old
+models/old
 
 #ignore data files too big to be pushed on git
 dataset/diabete*
-diabete_2e.csv
-diabete_bb.csv
 woman_2e.csv
 woman_bb.csv
 
