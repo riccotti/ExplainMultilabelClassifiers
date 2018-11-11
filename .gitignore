@@ -14,7 +14,15 @@ global_dt/old
 models/old
 
 #ignore data files too big to be pushed on git
-dataset/
+dataset/yeast*
+dataset/woman*
+dataset/medical*
+dataset/old/
+dataset/dataset_raw/old/
+dataset/dataset_raw/yeast*
+dataset/dataset_raw/woman*
+dataset/dataset_raw/medical*
+
 
 
 #ignore ipynb_checkpoints
