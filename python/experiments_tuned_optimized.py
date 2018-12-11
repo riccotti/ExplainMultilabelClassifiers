@@ -73,7 +73,6 @@ except Exception:
 BB_predictions_df = pd.DataFrame(y_bb,columns=cols_Y_BB)
 Xtest_features_df = pd.DataFrame(X2e,columns=cols_X)
 X2E = pd.concat([Xtest_features_df,BB_predictions_df],axis=1)
-X2E_len = len(X2E)
 
 dt_params = {
     'max_depth': [None, 10, 20, 30, 40, 50, 70, 80, 90, 100],
