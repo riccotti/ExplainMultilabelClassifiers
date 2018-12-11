@@ -206,6 +206,6 @@ def oneDTforlabelpreds(i2e, synthetic_neigh, knn_neigh, cols_X, cols_Y_BB, param
         
     unionDT_labels_syn = pd.DataFrame(DT_syn_labelspred)
     unionDT_labels_knn = pd.DataFrame(DT_knn_labelspred)
-    unionDT_labels_i2e = pd.DataFrame(DT_i2e_labelspred)        
+    unionDT_labels_i2e = pd.DataFrame(DT_i2e_labelspred,index=[0])        
     
     return unionDT_labels_syn, unionDT_labels_knn, unionDT_labels_i2e, DT_rules, DT_rules_len     
