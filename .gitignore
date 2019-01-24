@@ -3,6 +3,8 @@
 
 #ignore the log folder
 log/
+#ignore python scripts in no_git_py folder
+no_git_py/
 #ignore old version of notebooks, models and datasets
 jupyter/old/
 global_dt/old
