@@ -18,10 +18,10 @@ dataset/yeast*
 dataset/woman*
 dataset/medical*
 
-#ignore ipynb_checkpoints
+#ignore ipynb_checkpoints & pycharmfiles
 .ipynb_checkpoints
 .ipynb_checkpoints/
-
+.idea/
 
 
 
