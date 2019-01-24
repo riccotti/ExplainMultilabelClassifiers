@@ -3,17 +3,18 @@
 This project aims to address the multi-label black-box outcome explanation problem. Introducing MARLENA (**M**ulti-l**a**bel **R**u**l**e-based **E**xpla**NA**tions)!
 
 ## Running MARLENA
+0.**Install the requirements.txt listed packages**
 
 1. **Install *multilabelexplanations***: In order to run MARLENA you first have to locally install the pyhton module *multilabelexplanations*. You can do this by running the following command into the module directory:
  ~~~~
  $ cd multilabelexplanations
  $ pip install .
  ~~~~
-2. **Run the jupyter notebooks**: you have to run the code in the jupyter notebooks in the listed order:  
-  *1_prepare_datasets.ipynb*  
-  *2_train_blackbox.ipynb* 	  
-  *3_pairwise_distances.ipynb*    
-  *4_global_decision_tree.ipynb*
+2. **Run the python scripts**: you have to run the code python folde in the listed order:  
+  *1_prepare_datasets.py*  
+  *2_train_blackbox.py* 	  
+  *3_pairwise_distances.py*    
+  *4_global_decision_tree.py*
   
 3. **Run MARLENA experiments py script** the script to run the experiments is in the *python* folder
   ~~~~
